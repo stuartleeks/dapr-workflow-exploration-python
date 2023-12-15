@@ -1,0 +1,14 @@
+# https://docs.dapr.io/developing-applications/local-development/multi-app-dapr-run/multi-app-template/
+version: 1
+# common:
+#   resourcesPath: ./components
+apps:
+
+  - appID: workflow_decorators
+    appDirPath: src/workflow_decorators
+    appPort: 8100
+    appProtocol: http
+    command: ["python3", "app.py"]
+    appLogDestination: console
+    env:
+      APP_PORT: 8100
