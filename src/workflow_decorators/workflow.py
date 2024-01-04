@@ -140,7 +140,7 @@ def processing_workflow(context: DaprWorkflowContext, input):
         )
         logger.info(f"processing_workflow completed: {results}")
 
-        yield save_state(input=asdict(results))
+        yield save_state(results)
 
         return "workflow done"
     except Exception as e:

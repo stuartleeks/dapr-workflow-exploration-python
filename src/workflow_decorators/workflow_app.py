@@ -41,7 +41,7 @@ class WorkflowApp:
         argspec = inspect.getfullargspec(fn)
         # Currently requiring the input to be called 'input' to get data class deserialisation
         # as a PoC
-        input_annotation = argspec.annotations.get("input")
+        input_annotation = argspec.annotations.get("input") # TODO - determine the parameter without using the name!
         if input_annotation and is_dataclass(input_annotation):
             # replace inner_fn with a function that auto-deserialises the data class
             @functools.wraps(fn)
